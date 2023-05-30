@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llHotSale"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_hot_fone">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cvImageContainer"
+        android:layout_width="147dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_hot_fone"
+        android:padding="10dp"
+        android:scaleType="centerCrop">
+
+        <TextView
+            android:id="@+id/tvNew"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/rectengle"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:text="@string/New"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:fontFamily="@font/mark_pro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:fontFamily="@font/sfpro_display"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSuper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="11sp"
+            app:fontFamily="@font/sfpro_display"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvModel" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_buy_now"
+            android:layout_width="98dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="26dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSuper">
+
+            <ImageView
+                android:id="@+id/ivBuyNow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_hot_and_best"/>
+            <TextView
+                android:id="@+id/tvBuyNow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/Buy_now_"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                app:fontFamily="@font/sfpro_display"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivModelVisio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
+</LinearLayout>
