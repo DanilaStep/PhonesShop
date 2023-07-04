@@ -21,4 +21,7 @@
     <string name="money_prise">$300 - $500</string>
     <string name="size">Size</string>
     <string name="size_inches">4.5 to 5.5 inches</string>
+    <string name="Error">Произошла ошибка</string>
+    <string name="update">Update</string>
+    <string name="explorer">Explorer</string>
 </resources>
