@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clMyCart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.my_cart.MyCartFragment">
+
+    <LinearLayout
+        android:id="@+id/llMyCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_dissmis"
+            android:padding="14dp"
+            android:src="@drawable/ic_dissmis" />
+
+        <TextView
+            android:id="@+id/tvAddAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:text="@string/add_address"
+            android:textColor="#010035"
+            android:textSize="15sp"
+            app:fontFamily="@font/mark_pro" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/ivLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF6E4E"
+                android:padding="11dp"
+                android:src="@drawable/ic_address" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/my_cart"
+        android:textColor="#010035"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/mark_pro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llMyCart" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/bg_cart">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMyCart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_my_cart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:background="@drawable/bg_cart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/ivLine"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/ic_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivLine2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/ic_line_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivLine" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/total"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:fontFamily="@font/mark_pro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivLine" />
+
+        <TextView
+            android:id="@+id/tvDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/delivery"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:fontFamily="@font/mark_pro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTotal" />
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="215dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:fontFamily="@font/mark_pro"
+            app:layout_constraintBottom_toBottomOf="@id/tvTotal"
+            app:layout_constraintStart_toEndOf="@id/tvTotal"
+            app:layout_constraintTop_toTopOf="@id/tvTotal" />
+
+        <TextView
+            android:id="@+id/tvDeliveryFree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="195dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:fontFamily="@font/mark_pro"
+            app:layout_constraintTop_toTopOf="@id/tvDelivery"
+            app:layout_constraintBottom_toBottomOf="@id/tvDelivery"
+            app:layout_constraintStart_toEndOf="@id/tvDelivery" />
+
+        <LinearLayout
+            android:id="@+id/llPay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/bg_add_to_cart"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLine2">
+
+            <TextView
+                android:id="@+id/tvAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="120dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:text="@string/checkout"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:fontFamily="@font/mark_pro" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
