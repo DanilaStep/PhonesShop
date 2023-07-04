@@ -52,7 +52,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
-
+    //carousel
+    implementation 'com.github.sparrow007:carouselrecyclerview:1.2.6'
 
 
     implementation 'androidx.core:core-ktx:1.10.0'
