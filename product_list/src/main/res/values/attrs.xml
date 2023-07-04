@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PlaceHolder">
+        <attr name="placeholder_titleText" format="string" />
+        <attr name="placeholder_buttom" format="string" />
+    </declare-styleable>
+</resources>

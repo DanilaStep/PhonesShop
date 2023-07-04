@@ -1,10 +1,9 @@
 package com.example.product_list.ui.product_list
 
-import androidx.core.view.isGone
-import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.core.base.BaseFragment
+import com.example.core.models.ScreenStateEnum.*
 import com.example.product_list.R
 import com.example.product_list.databinding.FragmentProductListBinding
 import com.example.product_list.ui.adapters.BestSellerAdapter
@@ -24,25 +23,39 @@ class ProductListFragment : BaseFragment<FragmentProductListBinding, ProductList
         binding.rvHotSale.adapter = adapterHotSaleAdapter
         binding.rvBestSeller.adapter = adapterBestSeller
         onClickFunnel()
+        onClickBasket()
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.productsStatFlow.collect() { data ->
                 data?.let {
                     adapterHotSaleAdapter.submitList(it.homeStore)
                     adapterBestSeller.submitList(it.bestSeller)
-                } ?: showPlaceholder()
+                }
+            }
+        }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.screenStateFlow.collect() {
+                when (it) {
+                    PROGRESS -> showProgress()
+                    ERROR -> showPlaceholder()
+                    SUCCESS -> showContent()
+                }
             }
         }
     }
 
     override fun showPlaceholder() {
-        binding.placeholder.isVisible = true
-        binding.clListLocate.isGone = true
-        binding.nestedScroll.isGone = true
+        binding.tStatus.showPlaceHolder {
+            viewModel.getAllProducts()
+        }
     }
 
-    companion object {
-        fun newInstance() = ProductListFragment()
+    override fun showProgress() {
+        binding.tStatus.showProgress()
+    }
+
+    override fun showContent() {
+        binding.tStatus.showContent()
     }
 
     override fun onClickBestSeller(id: Int) {
@@ -50,14 +63,21 @@ class ProductListFragment : BaseFragment<FragmentProductListBinding, ProductList
     }
 
     override fun onClickLike(id: Int) {
-
     }
-    private fun onClickFunnel(){
-        binding.funnel.setOnClickListener{
+
+    private fun onClickFunnel() {
+        binding.funnel.setOnClickListener {
             FilterOptionsDialogFragment().show(requireActivity().supportFragmentManager, null)
         }
     }
+
     override fun onClickHomeStore(id: Int) {
         findNavController().navigate(R.id.action_productListFragment_to_productDetailsFragment)
+    }
+
+    fun onClickBasket() {
+        binding.ivBasket.setOnClickListener {
+            findNavController().navigate(R.id.action_productListFragment_to_myCartFragment)
+        }
     }
 }

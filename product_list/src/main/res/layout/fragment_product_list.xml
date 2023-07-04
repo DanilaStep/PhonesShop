@@ -1,392 +1,425 @@
-<?xml version="1.0" encoding="utf-8"?><!--<androidx.core.widget.NestedScrollView -->
-<!--    android:id="@+id/nsvList"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:orientation="vertical">-->
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ll_List"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_shop"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clListLocate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_shop"
-        app:layout_constraintBottom_toTopOf="@id/clList3"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <View
-            android:id="@+id/vector"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="120dp"
-            android:background="@drawable/vector"
-            app:layout_constraintBottom_toBottomOf="@id/location"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/location" />
-
-        <View
-            android:id="@+id/line_2"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="120dp"
-            android:background="@drawable/ic_down_line_2"
-            app:layout_constraintBottom_toBottomOf="@id/funnel"
-            app:layout_constraintStart_toEndOf="@id/location"
-            app:layout_constraintTop_toTopOf="@id/funnel" />
-
-        <ImageView
-            android:id="@+id/funnel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="25dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_funnel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:gravity="center"
-            android:text="@string/Locate"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:fontFamily="@font/mark_pro"
-            app:layout_constraintBottom_toBottomOf="@id/funnel"
-            app:layout_constraintStart_toEndOf="@id/vector"
-            app:layout_constraintTop_toTopOf="@id/funnel" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clListLocate">
+        android:layout_gravity="center">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clList3"
+
+        <LinearLayout
+            android:id="@+id/ll_List"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_shop">
+            android:background="@drawable/bg_shop"
+            android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/select_cate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="@string/select_cate"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                app:fontFamily="@font/mark_pro"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/view_all"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="17dp"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="@string/view_all"
-                android:textColor="@color/red"
-                app:fontFamily="@font/mark_pro"
-                app:layout_constraintBottom_toBottomOf="@id/select_cate"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/select_cate" />
-
-            <androidx.core.widget.NestedScrollView
-                android:id="@+id/nsv_ellipse"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clListLocate"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/select_cate">
-
-                <LinearLayout
-                    android:id="@+id/ll_ellipse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="23dp"
-                            android:layout_marginTop="24dp"
-                            android:background="@drawable/bg_red_ellipse"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_phone" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="24dp"
-                            android:background="@drawable/bg_ellipse"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_computer" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="24dp"
-                            android:background="@drawable/bg_ellipse"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_health" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="24dp"
-                            android:background="@drawable/bg_ellipse"
-                            android:padding="15dp"
-                            android:src="@drawable/ic_books" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="24dp"
-                            android:background="@drawable/bg_ellipse"
-                            android:padding="15dp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="24dp"
-                            android:background="@drawable/bg_ellipse"
-                            android:padding="15dp" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvPhone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="38dp"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginBottom="4dp"
-                            android:gravity="center"
-                            android:text="@string/phone"
-                            android:textColor="#FF6E4E"
-                            android:textSize="12sp"
-                            app:fontFamily="@font/mark_pro" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvComputer"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="39dp"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginBottom="4dp"
-                            android:gravity="center"
-                            android:text="@string/computer"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            app:fontFamily="@font/mark_pro" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvHealth"
-                            android:layout_width="54dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="37dp"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginBottom="4dp"
-                            android:gravity="center"
-                            android:text="@string/health"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            app:fontFamily="@font/mark_pro" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvBooks"
-                            android:layout_width="54dp"
-                            android:layout_height="20dp"
-                            android:layout_marginStart="37dp"
-                            android:layout_marginTop="7dp"
-                            android:layout_marginBottom="4dp"
-                            android:gravity="center"
-                            android:text="@string/books"
-                            android:textColor="@color/black"
-                            android:textSize="12sp"
-                            app:fontFamily="@font/mark_pro" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.core.widget.NestedScrollView>
-
-            <TextView
-                android:id="@+id/hot_sales"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="18dp"
-                android:gravity="center"
-                android:text="@string/hot_sales"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                app:fontFamily="@font/mark_pro"
-                app:layout_constraintBottom_toTopOf="@id/ll_hot_sale"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/nsv_ellipse" />
+                android:background="@drawable/bg_shop"
+                app:layout_constraintBottom_toTopOf="@id/clList3"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/see_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="17dp"
-                android:layout_marginBottom="4dp"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="@string/see_more"
-                android:textColor="@color/red"
-                app:fontFamily="@font/mark_pro"
-                app:layout_constraintBottom_toBottomOf="@id/hot_sales"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/hot_sales"
-                app:layout_goneMarginStart="30dp" />
 
-            <LinearLayout
-                android:id="@+id/ll_hot_sale"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/hot_sales">
+                <View
+                    android:id="@+id/vector"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="120dp"
+                    android:background="@drawable/vector"
+                    app:layout_constraintBottom_toBottomOf="@id/location"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/location" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_hot_sale"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clipToPadding="false"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_hot_sale" />
-            </LinearLayout>
+                <View
+                    android:id="@+id/line_2"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="120dp"
+                    android:background="@drawable/ic_down_line_2"
+                    app:layout_constraintBottom_toBottomOf="@id/funnel"
+                    app:layout_constraintStart_toEndOf="@id/location"
+                    app:layout_constraintTop_toTopOf="@id/funnel" />
 
-            <TextView
-                android:id="@+id/best_seller"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="25dp"
-                android:gravity="center"
-                android:padding="4dp"
-                android:text="@string/best_seller"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                app:fontFamily="@font/mark_pro"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_hot_sale" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/see_more2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="17dp"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="@string/see_more"
-                android:textColor="@color/red"
-                app:fontFamily="@font/mark_pro"
-                app:layout_constraintBottom_toBottomOf="@id/best_seller"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/best_seller" />
-
-            <!--        <LinearLayout-->
-            <!--            android:id="@+id/ll_best_seller"-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="221dp"-->
-            <!--            android:layout_marginStart="14dp"-->
-            <!--            android:layout_marginTop="21dp"-->
-            <!--            app:layout_constraintTop_toBottomOf="@id/best_seller"-->
-            <!--            android:orientation="horizontal">-->
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_best_seller"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:clipToPadding="false"
-                android:orientation="vertical"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/best_seller"
-                app:spanCount="2"
-                tools:listitem="@layout/item_best_seller" />
-            <!--        </LinearLayout>-->
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
-
-    <FrameLayout
-        android:id="@+id/placeholder"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            app:cardBackgroundColor="@color/black"
-            app:cardCornerRadius="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
-                    android:text="Произошла ошибка" />
-
-                <Button
-                    android:id="@+id/placeholderButton"
+                <ImageView
+                    android:id="@+id/funnel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Update"
-                    android:layout_marginTop="15dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </FrameLayout>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_funnel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:text="@string/Locate"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/mark_pro"
+                    app:layout_constraintBottom_toBottomOf="@id/funnel"
+                    app:layout_constraintStart_toEndOf="@id/vector"
+                    app:layout_constraintTop_toTopOf="@id/funnel" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clListLocate">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clList3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_shop">
+
+
+                    <TextView
+                        android:id="@+id/select_cate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:text="@string/select_cate"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        app:fontFamily="@font/mark_pro"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="17dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/view_all"
+                        android:textColor="@color/red"
+                        app:fontFamily="@font/mark_pro"
+                        app:layout_constraintBottom_toBottomOf="@id/select_cate"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/select_cate" />
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.core.widget.NestedScrollView
+                        android:id="@+id/nsv_ellipse"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/select_cate">
+
+                        <LinearLayout
+                            android:id="@+id/ll_ellipse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="23dp"
+                                    android:layout_marginTop="24dp"
+                                    android:background="@drawable/bg_red_ellipse"
+                                    android:padding="15dp"
+                                    android:src="@drawable/ic_phone" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="24dp"
+                                    android:background="@drawable/bg_ellipse"
+                                    android:padding="15dp"
+                                    android:src="@drawable/ic_computer" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="24dp"
+                                    android:background="@drawable/bg_ellipse"
+                                    android:padding="15dp"
+                                    android:src="@drawable/ic_health" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="24dp"
+                                    android:background="@drawable/bg_ellipse"
+                                    android:padding="15dp"
+                                    android:src="@drawable/ic_books" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="24dp"
+                                    android:background="@drawable/bg_ellipse"
+                                    android:padding="15dp" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="24dp"
+                                    android:background="@drawable/bg_ellipse"
+                                    android:padding="15dp" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvPhone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="38dp"
+                                    android:layout_marginTop="7dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:gravity="center"
+                                    android:text="@string/phone"
+                                    android:textColor="#FF6E4E"
+                                    android:textSize="12sp"
+                                    app:fontFamily="@font/mark_pro" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvComputer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="39dp"
+                                    android:layout_marginTop="7dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:gravity="center"
+                                    android:text="@string/computer"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    app:fontFamily="@font/mark_pro" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvHealth"
+                                    android:layout_width="54dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="37dp"
+                                    android:layout_marginTop="7dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:gravity="center"
+                                    android:text="@string/health"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    app:fontFamily="@font/mark_pro" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvBooks"
+                                    android:layout_width="54dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginStart="37dp"
+                                    android:layout_marginTop="7dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:gravity="center"
+                                    android:text="@string/books"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    app:fontFamily="@font/mark_pro" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                    <TextView
+                        android:id="@+id/hot_sales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="18dp"
+                        android:gravity="center"
+                        android:text="@string/hot_sales"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        app:fontFamily="@font/mark_pro"
+                        app:layout_constraintBottom_toTopOf="@id/ll_hot_sale"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/nsv_ellipse" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/see_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="17dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/see_more"
+                        android:textColor="@color/red"
+                        app:fontFamily="@font/mark_pro"
+                        app:layout_constraintBottom_toBottomOf="@id/hot_sales"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/hot_sales"
+                        app:layout_goneMarginStart="30dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_hot_sale"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/hot_sales">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_hot_sale"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_hot_sale" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/best_seller"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="25dp"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="@string/best_seller"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        app:fontFamily="@font/mark_pro"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ll_hot_sale" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/see_more2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="17dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/see_more"
+                        android:textColor="@color/red"
+                        app:fontFamily="@font/mark_pro"
+                        app:layout_constraintBottom_toBottomOf="@id/best_seller"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/best_seller" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_best_seller"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/best_seller"
+                        app:spanCount="2"
+                        tools:layout_editor_absoluteX="-27dp"
+                        tools:listitem="@layout/item_best_seller" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_board"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:src="@drawable/ic_dote" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="27dp"
+                android:text="@string/explorer"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:fontFamily="@font/mark_pro" />
+
+            <ImageView
+                android:id="@+id/ivBasket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="47dp"
+                android:layout_marginTop="27dp"
+                android:src="@drawable/ic_white_basket" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="53dp"
+                android:layout_marginTop="27dp"
+                android:src="@drawable/ic_white_like" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="27dp"
+                android:src="@drawable/ic_people" />
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.example.core.components.StatusView
+        android:id="@+id/tStatus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>
