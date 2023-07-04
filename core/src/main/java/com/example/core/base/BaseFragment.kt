@@ -26,9 +26,9 @@ clazz: KClass<VM>
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = inflateBinding.invoke(inflater,container,false)
-    return binding.root
+    ): View {
+        _binding = inflateBinding.invoke(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,6 +37,8 @@ clazz: KClass<VM>
     }
 
     abstract fun showPlaceholder()
+    abstract fun showProgress()
+    abstract fun showContent()
 
     abstract fun initialize()
     override fun onDestroyView() {
