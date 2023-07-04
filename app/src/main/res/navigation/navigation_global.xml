@@ -7,7 +7,10 @@
     <fragment
         android:id="@+id/productListFragment"
         android:name="com.example.product_list.ui.product_list.ProductListFragment"
-        android:label="ProductListFragment" >
+        android:label="ProductListFragment">
+        <action
+            android:id="@+id/action_productListFragment_to_myCartFragment"
+            app:destination="@id/myCartFragment" />
         <action
             android:id="@+id/action_productListFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
@@ -15,9 +18,13 @@
     <fragment
         android:id="@+id/productDetailsFragment"
         android:name="com.example.product_details.ui.product_details.ProductDetailsFragment"
-        android:label="ProductDetailsFragment" >
+        android:label="ProductDetailsFragment">
         <action
-            android:id="@+id/action_productDetailsFragment_to_productListFragment"
-            app:destination="@id/productListFragment" />
+            android:id="@+id/action_productDetailsFragment_to_myCartFragment"
+            app:destination="@id/myCartFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/myCartFragment"
+        android:name="com.example.mycart.ui.my_cart.MyCartFragment"
+        android:label="MyCartFragment" />
 </navigation>

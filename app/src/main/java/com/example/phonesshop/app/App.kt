@@ -2,6 +2,8 @@ package com.example.phonesshop.app
 
 import android.app.Application
 import com.example.core.retrofit.RetrofitFactory
+import com.example.mycart.di.MyCartModule
+import com.example.mycart.ui.my_cart.MyCartViewModel
 import com.example.product_details.di.ProductDetailsModule
 import com.example.product_details.ui.product_details.ProductDetailsViewModel
 import com.example.product_list.di.ProductListModule
@@ -30,23 +32,34 @@ class App: Application() {
         }
     }
     private val productListModule = module {
-        ProductListModule().apply{
+        ProductListModule().apply {
             single { provideApi(get()) }
-            single {provideRepository(get())}
-            single {provideInteractor(get())}
-            viewModel{ ProductListViewModel(get()) }
+            single { provideRepository(get()) }
+            single { provideInteractor(get()) }
+            viewModel { ProductListViewModel(get()) }
         }
+    }
+    private val myCartModule = module {
+        MyCartModule().apply {
+            single { provideApi(get()) }
+            single { provideRepository(get()) }
+            single { provideInteractor(get()) }
+            viewModel { MyCartViewModel(get()) }
+        }
+
+
     }
 
     private fun initKoin() {
-        startKoin{
+        startKoin {
             androidLogger()
             androidContext(this@App)
 
             modules(
                 retrofitModule,
                 productListModule,
-                productDetailsModule
+                productDetailsModule,
+                myCartModule
 
             )
         }
